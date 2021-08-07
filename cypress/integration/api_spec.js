@@ -10,6 +10,13 @@ describe('ERS Reimbursements Tests', () => {
         })
     })
 
+    it('GET reimbursements by user id', () => {
+        cy.request('/1001').then(response => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.have.length(20)
+        })
+    })
+
     it("Add Reimbursement", () => {
         const reimbursement = {
             "amount": 5000.00,
