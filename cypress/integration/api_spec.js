@@ -25,4 +25,16 @@ describe('ERS Reimbursements Tests', () => {
         cy.request('POST', '/', reimbursement)
             .its("body")
         })
+
+    it('Update Reimbursement', () => {
+        const reimbursement = {
+            "resolver": 1001,
+            "resolved": "2021-05-02",
+            "statusId": 1,
+            "id": 6268
+
+        }
+        cy.request('PUT', '/6828', reimbursement)
+            .its('body')
+    })
 })
